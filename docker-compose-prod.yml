@@ -1,0 +1,8 @@
+version: '3.7'
+
+services:
+  py-web-apps:
+    image: py-web-apps-release
+    container_name: py-web-apps
+    ports:
+      - "8000:8000"

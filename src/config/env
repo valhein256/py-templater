@@ -1,0 +1,17 @@
+# project setting
+API_SWAGGER=/docs
+API_REDOC=/redoc
+API_OPENAPI_SCHEMA=/openapi.json
+
+# logging config
+API_LOG_HOME=/var/log/app
+API_LOG_INFO=${API_LOG_HOME}/info.log
+API_LOG_WARN=${API_LOG_HOME}/warn.log
+API_LOG_ERROR=${API_LOG_HOME}/error.log
+
+# debugging
+API_DEBUG=0
+
+# profile
+PROFILE_ENABLE=false
+PROFILE_NAME=profile.html

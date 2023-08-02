@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  py-web-apps-dev:
+    image: py-web-apps-develop
+    container_name: py-web-apps-dev
+    environment:
+      - WORKSPACE=/opt/dev
+    command: >
+      gunicorn app.main:app -w 2 -k uvicorn.workers.UvicornWorker --timeout 30 -b 0.0.0.0:8000 --limit-request-line 0 --limit-request-field_size 0 --log-level debug
+    volumes:
+      - ./src/app:/opt/dev/app
+      - ./src/config:/opt/dev/config
+      - ./src/tests:/opt/dev/tests
+      - ./scripts/benchmark:/opt/dev/benchmark
+      - ./outputs/profiles:/opt/dev/profiles
+    ports:
+      - "8000:8000"
+      - "8089:8089"
